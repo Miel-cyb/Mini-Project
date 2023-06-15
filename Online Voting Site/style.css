@@ -1,13 +1,13 @@
-html{
-    height: 100%;
-}
+/* html{
+    height: 200%;
+} */
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     background: linear-gradient(to bottom right, rgb(237, 83, 83), rgb(23, 23, 217));
-     /* background-repeat: no-repeat */
+    background: linear-gradient(to bottom right, rgb(237, 83, 83), rgb(23, 23, 217));   
 }
+
 /* Landing Page */
 nav{
     display: flex;
@@ -75,6 +75,7 @@ footer img{
     width:70px;
 }
 
+
 /* Login and Sign Up Page */
  #home{
     text-decoration: none;
@@ -86,30 +87,85 @@ footer img{
     margin-top: 50px;
 }
 .form-page{
-    background: white;
-    width: 300px;
-    height: 200%;
-    padding: 10px;
-    margin: 50px;
+   width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
   
 }
 .form-page h1{
     font-family:Arial, Helvetica, sans-serif;
 }
-.form-page input{
-    padding: 10px;
-    font-size: 15px;
-    margin: 10px;
+#btn{
+    top: 0;
+    left: 0;
+    position:absolute;
+    width: 100px;
+    height: 100%;
+    background-color :rgb(216, 39, 169);
+    border-radius: 30px;
+    transition: 0.5s ;
 }
-.form-page a{
-color: rebeccapurple;
-margin-left: -100px;
+.btns{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 9px #ff61241f;
 }
-.form-page button{
-  margin: 15px;
-  padding: 5px;
-  width: 100px;
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background:transparent;
+    border: 0;
+    outline: none;
+    position: relative;
 }
-.form-page .active{
-      background: linear-gradient(to right,rgb(133, 133, 236), rgb(216, 39, 169));
+.input-group{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s ;
 }
+.input-field{
+    width:100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    display: block;
+    cursor: pointer;
+    margin: 30px auto;
+    background-color :rgb(216, 39, 169);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.checkbox{
+ margin: 10px;
+ margin-left: -150px;
+
+}
+span{
+color: #777;
+font-size: 12px;
+
+}
+#loginForm{
+    left: 50px;
+}
+#signUpForm{
+    left: 450px;
+}
+
+

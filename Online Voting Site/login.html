@@ -14,16 +14,27 @@
         <div>
         <h1>Welcome</h1>
         </div>
-        <form action="#">
-            <input type="text" placeholder="Email" id="email">
-            <br>
-            <input type="text" name="" id="password" placeholder="password">
-            <br>
-            <a href="#">Forgot Password?</a>
+         <div class="btns">
+              <div id="btn"></div>
+         <button id="login" class="toggle-btn">Login</button>
+         <button id="signUp" class="toggle-btn">SignUp</button>
+        </div>
+         <form action="#" id="loginForm" class="input-group">
+            <input type="text" class="input-field" placeholder="user Id" required>
+            <input type="text" class="input-field" placeholder="Enter password" required>
+            <input type="checkbox" class="checkbox"><span>Remember Password</span>
+             <button type="submit" class="submit-btn">Log in</button>
         </form>
-         <button id="login" class="active">Login</button>
-        <button id="sign up">Sign up</button>
+         <form action="#" id="signUpForm" class="input-group">
+            <input type="text" class="input-field" placeholder="user Id" required>
+            <input type="email" class="input-field" placeholder="Email Id" required>
+            <input type="text" class="input-field" placeholder="Enter password" required>
+            <input type="checkbox" class="checkbox"><span> I agree to the terms and conditions</span>
+             <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
     </div>
 </center>
+
+<script src="app.js"></script>
 </body>
 </html>
