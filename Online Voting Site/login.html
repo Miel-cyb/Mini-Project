@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-Vote</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <a href="index.html" id="home">Home</a>
@@ -14,22 +15,69 @@
         <div>
         <h1>Welcome</h1>
         </div>
+
          <div class="btns">
-              <div id="btn"></div>
+         <div id="btn"></div>
          <button id="login" class="toggle-btn">Login</button>
          <button id="signUp" class="toggle-btn">SignUp</button>
         </div>
+        <!-- Login -->
          <form action="#" id="loginForm" class="input-group">
-            <input type="text" class="input-field" placeholder="user Id" required>
-            <input type="text" class="input-field" placeholder="Enter password" required>
+            <div class="field username-field">
+            <input type="text" class="input-field" placeholder="user name" autocomplete="off">
+            <span class="error username-error">
+            <i class="fa fa-exclamation-circle"></i>
+                <p>Please enter a valid username</p>
+            </span>
+            </div>
+            <div class="field password-field">
+            <input type="password" class="input-field" placeholder="Enter password" autocomplete="off">
+             <span class="error password">
+            <i class="fa fa-exclamation-circle"></i>
+                <p>Please enter at least 8 characters 
+                with numbers,symbol,capital letter</p>
+            </span>
+            </div>
             <input type="checkbox" class="checkbox"><span>Remember Password</span>
              <button type="submit" class="submit-btn">Log in</button>
         </form>
+
+        <!-- Sign Up -->
          <form action="#" id="signUpForm" class="input-group">
-            <input type="text" class="input-field" placeholder="user Id" required>
-            <input type="email" class="input-field" placeholder="Email Id" required>
-            <input type="text" class="input-field" placeholder="Enter password" required>
-            <input type="checkbox" class="checkbox"><span> I agree to the terms and conditions</span>
+            <div class="field username-field">
+            <input type="text" class="input-field username" placeholder="user name"autocomplete="off" >
+            <span class="error username-error">
+            <i class="fa fa-exclamation-circle"></i>
+                <p>username must be at least 3 characters</p>
+            </span>
+            </div>
+
+            <div class="field email-field">
+            <input type="text" class="input-field email" placeholder="Email" autocomplete="off" >
+             <span class="error email-error">
+            <i class="fa fa-exclamation-circle"></i>
+                <p>Please enter a valid email</p>
+            </span>
+            </div>
+
+            <div class="field password-field">
+            <input type="password" class="input-field create-password" placeholder="Create password"autocomplete="off" >
+             <span class="error create password">
+            <i class="fa fa-exclamation-circle"></i>
+                <p>Please enter at least 8 characters 
+                with numbers,symbol,capital letter</p>
+            </span>
+            </div>
+
+             <div class="field password-field">
+            <input type="password" class="input-field confirm-password" placeholder="Confirm password" autocomplete="off">
+             <span class="error confirm password">
+            <i class="fa fa-exclamation-circle"></i>
+                <p>Password does not match</p>
+            </span>
+            </div>
+            
+           <input type="checkbox" class="checkbox" id="checkbox"><span> I agree to the terms and conditions</span>
              <button type="submit" class="submit-btn">Sign Up</button>
         </form>
     </div>

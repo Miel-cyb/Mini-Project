@@ -1,11 +1,11 @@
 /* html{
-    height: 200%;
+    height: 100%;
 } */
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom right, rgb(237, 83, 83), rgb(23, 23, 217));   
+    background: linear-gradient(to bottom right, rgb(220, 66, 66), rgb(23, 23, 217));   
 }
 
 /* Landing Page */
@@ -87,14 +87,14 @@ footer img{
     margin-top: 50px;
 }
 .form-page{
-   width: 380px;
-    height: 480px;
+   width:  380px ;
+    height: 610px;
     position: relative;
     margin: 6% auto;
     background: #fff;
     padding: 5px;
-    overflow: hidden;
-  
+    overflow:hidden;
+    
 }
 .form-page h1{
     font-family:Arial, Helvetica, sans-serif;
@@ -132,14 +132,40 @@ footer img{
 }
 .input-field{
     width:100%;
-    padding: 5px 0;
+    padding: 6px 0;
     margin: 5px 0;
     border: 0;
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
 }
+.field .error{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(225, 46, 46);
+    font-size: 13px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+   visibility: hidden;
+}
+.invalid {
+    display: flex;
+    visibility: visible;
+}
+.invalid input{
+    border-bottom-color: rgb(225, 46, 46);
+}
+ .success input{
+    border-bottom-color: rgb(39, 169, 39);
+}
+.field .password p{
+text-align: left;
+}
+.field .fa{
+    margin-right: 6px;
 
+}
 .submit-btn{
     width: 85%;
     padding: 10px 30px;
@@ -150,6 +176,13 @@ footer img{
     border: 0;
     outline: none;
     border-radius: 30px;
+}
+.submit-btn:hover{
+    background-color:rgb(208, 59, 168) ;
+    padding: 11px 31px;
+}
+.submit-btn:active{
+    border: 2px solid black;
 }
 .checkbox{
  margin: 10px;

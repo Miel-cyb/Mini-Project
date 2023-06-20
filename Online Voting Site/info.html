@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-Vote</title>
+</head>
+<body>
+   <!-- internal style -->
+   <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+   .first{
+      background: linear-gradient(to bottom right, rgb(220, 66, 66), rgb(23, 23, 217));
+      height: 40rem;
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    nav ul a{
+      text-decoration: none;
+       color: rgb(69, 235, 241);
+    }
+    ul li{
+        list-style-type: none;
+        font-size: 20px;  
+    }
+    ul li a:hover{
+        color: white;
+    }
+    .first-section{
+        color: white;
+        margin: 200px;
+        font-size: 30px;
+        display: flex;
+    }
+    .first-section p{
+        font-size: 20px;
+        color: rgb(69, 235, 241);
+        width: 70%;
+    }
+    .first-section .summary{
+        margin-left: -60px;
+    }
+    .first-section img{
+        width: 300%;
+        margin-left: -50px;   
+    }
+    button{
+        appearance: button;
+        width: 150px;
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px;
+        background: linear-gradient(to bottom right, pink, rgb(24, 24, 175));
+        cursor: pointer;
+        margin-left: 30px;
+        }
+       
+    button:hover{
+        background: linear-gradient(to bottom right, rgb(220, 66, 66), rgb(23, 23, 217));  
+         color: white;
+    }
+    .second-section{
+        font-size: 30px;
+        margin: 50px;
+        padding: 70px;
+    }
+    
+    .last-section{
+        display: flex;
+        background: linear-gradient(to bottom right,purple, rgb(23, 23, 217));
+        padding: 20px;
+         height: 30rem;
+    }
+    .last-section div:last-child{
+        margin: 100px;
+    }
+    .last-section h3{
+        color: white;
+        font-size: 40px;
+        margin-left: 20px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style: italic;
+    }
+   </style>
+
+
+   
+<div class="first">
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="index.html#bottom">Contact US</a></li>
+        </ul>
+    </nav>
+    <section class="first-section">
+          <div class="summary">
+        <h3>Online Voting &rightarrow; I-Vote</h3>
+         <p>Online voting systems are software platforms used to securely conduct 
+            votes and elections. <br> As a digital platform, they eliminate the need to 
+            cast your votes using paper or having to gather in person. <br>
+            nline voting system is a software platform that allows groups to securely conduct 
+            votes and elections. High-quality online voting systems balance ballot 
+            security, accessibility, and the overall requirements of an organization's voting event.
+        </p>
+        <a href="#"><button>VOTE NOW</button></a>
+        </div>
+        <div>
+            <img src="./figure.svg" alt="a man">
+        </div>
+    </section>
+    </div>
+    <section class="second-section">
+        <center>
+        <h3 id="about">About us</h3>
+        <p>
+          Voting is a method for a group, such as a meeting or an electorate, in order 
+           to make a collective decision or express an opinion usually following discussions,
+           debates or election campaigns. We are here to provide the necessary ways to help
+           engage our users to comfortably cast their votes to their preferred aspirant.
+           Our goal is to be part of the evolving technology and help make life easier digitally.
+           Digitization is now here and we are engaging lots of people across the globe.
+            </p>
+        </center>
+    </section>
+    <section class="last-section">
+        <div>
+            <img src="./man.png" alt="a man">
+            </div>
+            <div>
+            <h3>The Evolution</h3>
+            <p style="color: white; font-size: 20px;"> “Technology is best when it brings people together.” ...
+“It has become appallingly obvious that our technology has exceeded our humanity.” ...
+“It is only when they go wrong that machines remind you how powerful they are.” ...
+“The Web as I envisaged it, we have not seen it yet.</p>
+            <a href="#"><button>VOTE NOW</button></a>
+            </div>
+    </section>
+</body>
+</html>
