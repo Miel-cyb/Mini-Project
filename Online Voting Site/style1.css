@@ -1,0 +1,151 @@
+/* VOTING PAGE*/
+/* sidebar display */
+.page {
+	display: flex;
+}
+/* .navbar{
+     border-bottom: 4px ridge pink;
+     width: 85em;   
+} */
+.sidebar {
+	transform: translate(-100%);
+	box-shadow: none;
+	opacity: 0;
+}
+/* sidebar menu btn */
+.sidebar-toggle {
+	top: 2rem;
+	right: 3rem;
+	font-size: 2rem;
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	margin-left: 10rem;
+	color: white;
+	animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.sidebar-toggle:hover {
+	font-size: 30px;
+	color: rgb(235, 211, 166);
+}
+/* Close button */
+.navbar-poll .close-btn {
+	top: 2rem;
+	right: 3rem;
+	font-size: 2rem;
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	margin-left: 150px;
+}
+.close-btn:hover {
+	color: rgb(243, 34, 34);
+}
+/* sidebar list items */
+.sidebar-show {
+	opacity: 1;
+	transform: translate(0);
+	position: fixed;
+	background-color: whitesmoke;
+	height: 100%;
+	width: 15%;
+	transition: 0.5s ease-in;
+	top: 0;
+	margin-left: -5px;
+}
+.sidebar ul {
+	display: block;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	padding: 15px;
+	line-height: 5rem;
+}
+.sidebar li {
+	margin-left: -20px;
+	width: 120%;
+}
+.sidebar li:hover {
+	background-color: rgb(216, 39, 169);
+}
+.list a {
+	text-decoration: none;
+	transition: 0.5s ease-in-out;
+}
+.list a:hover {
+	color: whitesmoke;
+}
+footer {
+	margin-top: 6em;
+	font-size: 25px;
+}
+footer a:hover {
+	color: rgba(19, 19, 236, 0.906);
+	font-size: 21px;
+}
+.position {
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+.name {
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: rgb(116, 218, 32);
+}
+.identity .name {
+	position: absolute;
+	margin-top: -20px;
+	margin-left: 35px;
+}
+.aspirants {
+	margin-left: 180px;
+}
+.aspirants img {
+	width: 140px;
+	clip-path: circle();
+}
+#big-img img {
+	width: 100px;
+}
+#big-img #vote {
+	margin-left: -6em;
+}
+.pictures {
+	display: flex;
+	margin-top: 30px;
+	gap: 40px;
+}
+
+#vote {
+	position: absolute;
+	z-index: 1;
+	margin-left: -7em;
+	margin-top: 5em;
+}
+#vote button {
+	padding: 5px;
+	width: 80px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-weight: bold;
+}
+#vote button:hover {
+	background-color: rgb(199, 185, 185);
+	color: rgb(118, 40, 192);
+	border: 1px inset rgb(53, 53, 53);
+  cursor: pointer;
+}

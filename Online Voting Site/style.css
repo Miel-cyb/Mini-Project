@@ -1,11 +1,11 @@
-/* html{
+html{
     height: 100%;
-} */
+}
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom right, rgb(220, 66, 66), rgb(23, 23, 217));   
+    background: linear-gradient(to bottom right, rgb(220, 66, 66), rgb(23, 23, 217));  
 }
 
 /* Landing Page */
@@ -149,8 +149,8 @@ footer img{
     margin-bottom: 5px;
    visibility: hidden;
 }
-.invalid {
-    display: flex;
+.invalid{
+    display: block;
     visibility: visible;
 }
 .invalid input{
@@ -200,5 +200,6 @@ font-size: 12px;
 #signUpForm{
     left: 450px;
 }
+
 
 
