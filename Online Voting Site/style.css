@@ -5,7 +5,8 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom right, rgb(220, 66, 66), rgb(23, 23, 217));  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(to right, blueviolet,rgb(183, 52, 189));
 }
 
 /* Landing Page */
@@ -21,25 +22,39 @@ nav{
    gap: 50px;
    margin-right: 50px;
  }
+
  nav ul li a{
     text-decoration: none;
-     color: rgb(69, 235, 241);
+    color: rgb(218, 218, 62);
  }
  nav ul li{
     list-style-type: none;
     font-size: 20px; 
  }
- nav ul li:hover{
+ nav ul li a:hover{
 font-size: 21px;
+color: white;
  }
+
  main{
     display: flex;
     justify-content: space-between;
-    margin: 30px;
+    margin-top: 5px;
+    margin-left: 80px;
+    background-color: rgb(225, 231, 236);
+    border-radius: 5px;
+    width: 90%;
+    border: transparent;
+   
+ }
+ 
+ main .intro{
+    margin-left: 50px;
  }
   main h3{
-    color: white;
-    font-size: 50px;
+    color: rgb(4, 4, 35);
+    font-size: 40px;
+    margin-left: 30px;
   }
 main hr{
     width: 100px;
@@ -47,24 +62,25 @@ main hr{
 }
 
 main p{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 
-    'Trebuchet MS', sans-serif;
-    color: rgb(69, 235, 241);
+    color: rgb(183, 52, 189) ;
     font-size: 17px;  
     padding: 10px;
+    
 }
 main button{
-    background-color:rgb(51, 251, 255) ;
+    background-color:rgb(37, 37, 102);
+    color: yellow;
     border-color: transparent;
     border-radius: 8px;
-    padding: 10px;
-    width: 150px;
+    padding: 15px;
+    width: 155px;
     font-size: 15px;
     transition: 0.2s ease-out;
 }
 main button:hover{
-    background-color:rgb(65, 234, 237) ;
-    border:0.5px rgb(90, 86, 86) inset ;
+    background-color: gainsboro; 
+    border: 2px rgb(1, 1, 1) solid ;  
+    color: blueviolet;
 }
 footer{
     text-align: center;
@@ -73,6 +89,29 @@ footer{
 }
 footer img{
     width:70px;
+}
+ .color1{
+    background-color: blueviolet;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 0 60%;
+    z-index: 1;
+    transform: rotateX(0deg);
+    margin-left: -100px;
+ 
+ }
+.color2{
+     background-color:rgb(183, 52, 189);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 0 60%;
+    z-index: 1;
+   margin: 200px;
+   margin-top: 28%;
+   margin-left: 70em;
+   transform: rotateX(0deg);
 }
 
 
@@ -90,7 +129,7 @@ footer img{
    width:  380px ;
     height: 610px;
     position: relative;
-    margin: 6% auto;
+    margin: 4% auto;
     background: #fff;
     padding: 5px;
     overflow:hidden;
@@ -200,6 +239,8 @@ font-size: 12px;
 #signUpForm{
     left: 450px;
 }
+
+
 
 
 

@@ -87,8 +87,9 @@
 	color: whitesmoke;
 }
 footer {
-	margin-top: 6em;
+	margin-top: 10em;
 	font-size: 25px;
+	text-align: center;
 }
 footer a:hover {
 	color: rgba(19, 19, 236, 0.906);
@@ -136,16 +137,18 @@ footer a:hover {
 	margin-left: -7em;
 	margin-top: 5em;
 }
-#vote button {
+#vote button,#submit{
 	padding: 5px;
 	width: 80px;
 	border-radius: 5px;
 	font-size: 15px;
 	font-weight: bold;
 }
-#vote button:hover {
+#vote button:hover, #submit:hover{
 	background-color: rgb(199, 185, 185);
 	color: rgb(118, 40, 192);
 	border: 1px inset rgb(53, 53, 53);
   cursor: pointer;
 }
+
+
