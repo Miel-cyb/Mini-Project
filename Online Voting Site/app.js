@@ -23,7 +23,7 @@
 
 
 // //Validating the form
-//     const emailInput = document.querySelector(".email");
+//  const emailInput = document.querySelector(".email");
 // 	const  username = document.querySelector(".username");
 // 	const createPassword = document.querySelector(".create-password");;
 // 	const confirmPassword = document.querySelector(".confirm-password");
@@ -69,13 +69,13 @@
 // 	}
 //  }
 
-// signUpForm.addEventListener("submit", function (e) {
-// 	e.preventDefault(); //preventing form from submitting
-// 	checkUsername();
-// 	checkEmail();
-// 	checkPassword();
-// 	confirmCheck();
-// });
+signUpForm.addEventListener("submit", function (e) {
+	e.preventDefault(); //preventing form from submitting
+	checkUsername();
+	checkEmail();
+	checkPassword();
+	confirmCheck();
+});
 
 
       
