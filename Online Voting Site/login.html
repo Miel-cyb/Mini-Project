@@ -23,13 +23,14 @@
         </div>
         <!-- Login -->
          <form action="#" id="loginForm" class="input-group">
-            <div class="field username-field">
-            <input type="text" class="input-field" placeholder="user name" autocomplete="off">
-            <span class="error username-error">
+          <div class="field email-field">
+            <input type="text" class="input-field email" placeholder="Email" autocomplete="off" >
+             <span class="error email-auth">
             <i class="fa fa-exclamation-circle"></i>
-                <p>Please enter a valid username</p>
+                <p>Please enter a valid email</p>
             </span>
             </div>
+
             <div class="field password-field">
             <input type="password" class="input-field" placeholder="Enter password" autocomplete="off">
              <span class="error password">
@@ -48,7 +49,7 @@
             <input type="text" class="input-field username" placeholder="user name"autocomplete="off" >
             <span class="error username-error">
             <i class="fa fa-exclamation-circle"></i>
-                <p>username must be at least 3 characters</p>
+                <p>Username must be at least 3 characters</p>
             </span>
             </div>
 
@@ -62,7 +63,7 @@
 
             <div class="field password-field">
             <input type="password" class="input-field create-password" placeholder="Create password"autocomplete="off" >
-             <span class="error create password">
+             <span class="error passwordError">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Please enter at least 8 characters 
                 with numbers,symbol,capital letter</p>
@@ -71,7 +72,7 @@
 
              <div class="field password-field">
             <input type="password" class="input-field confirm-password" placeholder="Confirm password" autocomplete="off">
-             <span class="error confirm password">
+             <span class="error confirm-passwordError">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Password does not match</p>
             </span>
@@ -83,6 +84,6 @@
     </div>
 </center>
 
-<script src="app.js"></script>
+<script type="module" src="app1.js"></script>
 </body>
 </html>

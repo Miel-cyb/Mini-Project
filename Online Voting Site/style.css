@@ -188,12 +188,8 @@ footer img{
     margin-bottom: 5px;
    visibility: hidden;
 }
-.invalid{
-    display: block;
+.field .show{
     visibility: visible;
-}
-.invalid input{
-    border-bottom-color: rgb(225, 46, 46);
 }
  .success input{
     border-bottom-color: rgb(39, 169, 39);
