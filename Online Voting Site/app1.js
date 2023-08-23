@@ -1,17 +1,19 @@
 //Swapping from login and signUp
-const signUpBtn = document.querySelector("#signUp");
-const loginBtn = document.querySelector("#login");
+const signUpToggle = document.querySelector("#signUp");
+const loginToggle= document.querySelector("#login");
 const login = document.querySelector("#loginForm");
 const btn = document.querySelector("#btn");
 const signUpForm = document.querySelector("#signUpForm");
+const signUpBtn = document.querySelector(".signUp-button");
+const loginBtn = document.querySelector(".login-button");
 
-loginBtn.addEventListener("click", function () {
+loginToggle.addEventListener("click", function () {
 	login.style.left = "50px";
 	signUpForm.style.left = "450px";
 	btn.style.left = "0px";
 });
 
-signUpBtn.addEventListener("click", function () {
+signUpToggle.addEventListener("click", function () {
 	swap();
 });
 
@@ -22,51 +24,56 @@ function swap() {
 }
 
 //Validating the form
- const emailInput = document.querySelector(".email");
-	const  username = document.querySelector(".username");
-	const createPassword = document.querySelector(".create-password");;
+ const emailInput = document.querySelector("#email");
+	const  usernameInput = document.querySelector(".username");
+	const userPassword = document.querySelector(".create-password");;
 	const confirmPassword = document.querySelector(".confirm-password");
 	const usernameField= document.querySelector(".username-error");
 	const emailField = document.querySelector(".email-error");
 	const passwordField = document.querySelector(".passwordError");
     const confirmField = document.querySelector(".confirm-passwordError")
+	const loginEmail = document.querySelector("#loginEmail");
+	const loginPassword= document.querySelector(".loginPassword")
 
 
-// username
-function checkUsername(){
-   if(username.value === ""){
-   usernameField.classList.add("show");
-   }
+//  // username
+// function checkUsername(){
+//    if(usernameInput.value === ""){
+//    usernameField.classList.add("show");
+//    }
+//    else{
+// 	usernameField.classList.remove("show");
+//    }
+// }
 
-}
-
-// // email
-function checkEmail(){
-	const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
- if (emailInput.value === ""){
-	emailField.classList.add("show");
- }
- else if (!emailInput.value.match(pattern)){
-	alert("email must contain some characters,@ symbol and a domain(e.g .com)");
- }
-}
-
-// password
- function checkPassword(){
-	const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-	if(createPassword.value ===""){
-		alert("password can't be empty")
-        passwordField.classList.add("show")
-	}
-	else if(!createPassword.value.match(pattern)){
-		passwordField.classList.add("show")
-	}
- }
- function confirmCheck(){
-	if(!confirmPassword.value.match(createPassword)){
-		confirmField.classList.add("show")
-	}
- }
+// // // email
+// function checkEmail(){
+// 	const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//  if (emailInput.value === " "){
+// 	alert("email field can't be empty")
+//  }
+// }
+// // password
+//  function checkPassword(){
+// 	const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+// 	if(userPassword.value ===""){
+// 		alert("password can't be empty")
+// 	}
+// 	else if(!userPassword.value.match(pattern)){
+// 		passwordField.classList.add("show")
+// 	}
+// 	else{
+// 		passwordField.classList.remove("show")
+// 	}
+//  }
+//  function confirmCheck(){
+// 	if(!confirmPassword.value.match(userPassword)){
+// 		confirmField.classList.add("show")
+// 	}
+// 	else{
+// 		confirmField.classList.remove("show");
+// 	}
+//  }
 
 
 // firebase authentication
@@ -75,9 +82,8 @@ function checkEmail(){
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-  import { getAuth, createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+ } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -98,26 +104,48 @@ function checkEmail(){
   const analytics = getAnalytics(app);
   const auth = getAuth(app);
 
+const userSignUp = async () => {
+	const signUpEmail = emailInput.value;
+	const signUpPassword = userPassword.value;
+	createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+		.then((userCredential) => {
+			const user = userCredential.user;
+			console.log(user);
+			alert("Your account has been created");
+			console.log(signUpEmail);
+			window.location.href ="login.html"
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			alert(errorCode + errorMessage);
+		});
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-signUpForm.addEventListener("submit", function (e) {
+signUpBtn.addEventListener("click", function (e) {
 	e.preventDefault(); //preventing form from submitting
-	checkUsername();
-	checkEmail();
-	checkPassword();
-	confirmCheck();
+	userSignUp();
 });
+
+
+const userSignIn = async () => {
+	const signInEmail = loginEmail.value;
+	const signInPassword = loginPassword.value;
+	signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+		.then((userCredential) => {
+			const user = userCredential.user;
+			console.log(user);
+			alert("Sign in Successful");
+			window.location.href ="Polling.html"
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			alert(errorCode + errorMessage);
+		});
+};
+
+loginBtn.addEventListener("click",function(e){
+	e.preventDefault();
+	userSignIn();
+})

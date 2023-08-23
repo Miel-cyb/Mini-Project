@@ -24,7 +24,7 @@
         <!-- Login -->
          <form action="#" id="loginForm" class="input-group">
           <div class="field email-field">
-            <input type="text" class="input-field email" placeholder="Email" autocomplete="off" >
+            <input type="text" class="input-field" id="loginEmail" placeholder="Email" autocomplete="off" >
              <span class="error email-auth">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Please enter a valid email</p>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="field password-field">
-            <input type="password" class="input-field" placeholder="Enter password" autocomplete="off">
+            <input type="password" class="input-field loginPassword" placeholder="Enter password" autocomplete="off">
              <span class="error password">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Please enter at least 8 characters 
@@ -40,21 +40,21 @@
             </span>
             </div>
             <input type="checkbox" class="checkbox"><span>Remember Password</span>
-             <button type="submit" class="submit-btn">Log in</button>
+             <button type="submit" class="submit-btn login-button">Log in</button>
         </form>
 
         <!-- Sign Up -->
          <form action="#" id="signUpForm" class="input-group">
-            <div class="field username-field">
+            <!-- <div class="field username-field">
             <input type="text" class="input-field username" placeholder="user name"autocomplete="off" >
             <span class="error username-error">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Username must be at least 3 characters</p>
             </span>
-            </div>
+            </div> -->
 
             <div class="field email-field">
-            <input type="text" class="input-field email" placeholder="Email" autocomplete="off" >
+            <input type="email" class="input-field" id="email" placeholder="Email" autocomplete="off" >
              <span class="error email-error">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Please enter a valid email</p>
@@ -70,16 +70,16 @@
             </span>
             </div>
 
-             <div class="field password-field">
+             <!-- <div class="field password-field">
             <input type="password" class="input-field confirm-password" placeholder="Confirm password" autocomplete="off">
              <span class="error confirm-passwordError">
             <i class="fa fa-exclamation-circle"></i>
                 <p>Password does not match</p>
             </span>
-            </div>
+            </div> -->
             
            <input type="checkbox" class="checkbox" id="checkbox"><span> I agree to the terms and conditions</span>
-             <button type="submit" class="submit-btn">Sign Up</button>
+             <button type="submit" class="submit-btn signUp-button">Sign Up</button>
         </form>
     </div>
 </center>
