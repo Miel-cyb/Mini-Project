@@ -14,132 +14,267 @@ close_btn.addEventListener("click", function () {
 });
 
 
+  
 
+    
+    // document.addEventListener("DOMContentLoaded", function () {
+	// 		const storedSelection = localStorage.getItem("candidateSelection");
+	// 		const candidateSelection = storedSelection
+	// 			? JSON.parse(storedSelection)
+	// 			: {};
 
-// // VOTING PAGE
+	// 		const voteButtons = document.querySelectorAll(".vote");
+	// 		const removeButtons = document.querySelectorAll(".remove-vote");
+	// 		const votesResults = {}; // To store the vote counts
 
-// Define the voting time interval in milliseconds (e.g., 5 minutes)
-    const votingTimeInterval = 5 * 60 * 1000; // 5 minutes
+	// 		voteButtons.forEach((button) => {
+	// 			button.addEventListener("click", voteHandler);
+	// 		});
 
-    // Object to store the click counts for each candidate
-    let clickCounts = {};
+	// 		removeButtons.forEach((button) => {
+	// 			button.addEventListener("click", removeVoteHandler);
+	// 		});
 
-    // Get the element where the time and vote results will be displayed
-    const timeDisplay = document.getElementById('time-display');
-    const voteResults = document.getElementById('vote-results');
-    const menuButton = document.getElementById('menu-button');
+	// 		// Initialize vote counts from candidateSelection
+	// 		for (const position in candidateSelection) {
+	// 			const candidateName = candidateSelection[position];
+	// 			votesResults[candidateName] = (votesResults[candidateName] || 0) + 1;
+	// 			updateVoteCount(candidateName);
+	// 		}
 
-    // Function to update the time display
-    function updateRemainingTime(remainingTime) {
-      const minutes = Math.floor(remainingTime / 60000);
-      const seconds = Math.floor((remainingTime % 60000) / 1000);
-      timeDisplay.textContent = `Time Remaining: ${minutes} minutes ${seconds} seconds`;
-    }
+	// 		// Function to update the vote count on the UI
+	// 		function updateVoteCount(candidateName) {
+	// 			const voteSpan = document.querySelector(
+	// 				`span[data-id="${candidateName}"]`
+	// 			);
+	// 			const currentVotes = votesResults[candidateName] || 0;
+	// 			voteSpan.textContent = currentVotes;
+	// 		}
 
-    // Function to disable voting and display the vote results
-    function endVoting() {
-      // Remove all the content on the page
-      document.body.innerHTML = '';
+	// 		function voteHandler(event) {
+	// 			event.preventDefault();
+	// 			const button = event.target;
+	// 			const candidateName = button.getAttribute("data-id").trim();
+	// 			const candidatePosition = button.getAttribute("data-category").trim();
 
-      // Display a message to the user
-      const message = document.createElement('p');
-      message.textContent = 'Voting is closed.';
-      document.body.appendChild(message);
+	// 			const previousSelection = candidateSelection[candidatePosition];
 
-      // Redirect the user to index.html after 2 seconds
-      setTimeout(() => {
-        window.location.href = 'index.html';
-      }, 2000);
-    }
+	// 			if (!previousSelection) {
+	// 				candidateSelection[candidatePosition] = candidateName;
+	// 				localStorage.setItem(
+	// 					"candidateSelection",
+	// 					JSON.stringify(candidateSelection)
+	// 				);
 
-    // Function to handle button clicks
-    function handleVoteClick(event) {
-      const button = event.target;
-      const name = button.getAttribute('data-id');
-      const category = button.getAttribute('data-category');
+	// 				votesResults[candidateName] = (votesResults[candidateName] || 0) + 1;
+	// 				updateVoteCount(candidateName);
 
-      // Disable all buttons in the same category
-      const categoryButtons = document.querySelectorAll(`.vote[data-category="${category}"]`);
-      categoryButtons.forEach(categoryButton => {
-        categoryButton.disabled = true;
-      });
-
-      // Increment the click count for the corresponding candidate
-      if (clickCounts.hasOwnProperty(name)) {
-        clickCounts[name]++;
-      } else {
-        clickCounts[name] = 1;
-      }
-    }
-
-    // Function to reset the voting state
-    function resetVoting() {
-      // Enable all the vote buttons
-      const voteButtons = document.querySelectorAll('.vote');
-      voteButtons.forEach(button => {
-        button.disabled = false;
-      });
-
-      // Clear the vote results
-      voteResults.innerHTML = '';
-
-      // Reset the click counts
-      clickCounts = {};
-
-      // Start the voting timer again
-      startVotingTimer();
-    }
-
-    // Function to start the voting timer
-    function startVotingTimer() {
-      // Calculate the specific end time as the current time plus the voting time interval
-      const specificEndTime = Date.now() + votingTimeInterval;
-
-      // Calculate the remaining time from the current time to the specific end time
-      const currentTime = Date.now();
-      const remainingTime = Math.max(specificEndTime - currentTime, 0);
-
-      // Display the initial remaining time
-      updateRemainingTime(remainingTime);
-
-      // Set the time interval for voting
-      setTimeout(() => {
-        endVoting();
-        updateRemainingTime(0);
-      }, remainingTime);
-
-      // Update the time display every second
-      const timer = setInterval(() => {
-        const currentTime = Date.now();
-        const remaining = Math.max(specificEndTime - currentTime, 0);
-        updateRemainingTime(remaining);
-
-        if (remaining === 0) {
-          clearInterval(timer);
-          endVoting();
-        }
-      }, 1000);
-    }
-
-    // Start the initial voting timer
-    startVotingTimer();
-
-    // Add event listeners to vote buttons
-    const voteButtons = document.querySelectorAll('.vote');
-    voteButtons.forEach(button => {
-      button.addEventListener('click', handleVoteClick);
-    });
-
-	// const buttons = document.querySelectorAll(".vote");
-     
-	// buttons.forEach(function (button) {
-	// 	button.addEventListener("click", function (e) {
-	// 	let nameID = e.currentTarget.dataset.id;
-	// 		const aspirantName = aspirants.filter(function(identity){
-	// 			if(identity.name === nameID){
-	// 				console.log(nameID)
+	// 				// Show remove vote button
+	// 				const removeButton = document.querySelector(
+	// 					`.remove-vote[data-id="${candidateName}"]`
+	// 				);
+	// 				removeButton.style.display = "inline";
+	// 			} else if (previousSelection === candidateName) {
+	// 				alert(
+	// 					`You have already voted for ${candidateName} for the position of ${candidatePosition}.`
+	// 				);
+	// 			} else {
+	// 				alert(
+	// 					`A candidate has already been selected for the position of ${candidatePosition}.`
+	// 				);
 	// 			}
-	// 		})
-    //     })
-	// });
+	// 		}
 
+	// 		function removeVoteHandler(event) {
+	// 			event.preventDefault();
+	// 			const button = event.target;
+	// 			const candidateName = button.getAttribute("data-id").trim();
+	// 			const candidatePosition = button.getAttribute("data-category").trim();
+
+	// 			if (candidateSelection[candidatePosition] === candidateName) {
+	// 				votesResults[candidateName] = (votesResults[candidateName] || 0) - 1;
+	// 				updateVoteCount(candidateName);
+
+	// 				// Remove selection
+	// 				delete candidateSelection[candidatePosition];
+	// 				localStorage.setItem(
+	// 					"candidateSelection",
+	// 					JSON.stringify(candidateSelection)
+	// 				);
+
+	// 				// Hide remove vote button
+	// 				button.style.display = "none";
+
+	// 				// Enable vote button
+	// 				const voteButton = document.querySelector(
+	// 					`.vote[data-id="${candidateName}"][data-category="${candidatePosition}"]`
+	// 				);
+	// 				voteButton.disabled = false;
+	// 			}
+	// 		}
+
+	// 		const submitButton = document.getElementById("submit");
+	// 		submitButton.addEventListener("click", submitHandler);
+
+	// 		function submitHandler(event) {
+	// 			event.preventDefault();
+
+	// 			// Check if the user has voted by checking the candidateSelection
+	// 			const selectedPositions = Object.keys(candidateSelection);
+
+	// 			if (selectedPositions.length === 0) {
+	// 				alert("Please vote first before submitting.");
+	// 			} else {
+	// 				alert("Vote submitted!");
+	// 				// window.location.href =""
+
+	// 				// Reset candidateSelection in local storage for new users to vote again
+	// 				localStorage.removeItem("candidateSelection");
+
+	// 				// Reset the candidateSelection in memory for the current user
+	// 				for (const position in candidateSelection) {
+	// 					delete candidateSelection[position];
+	// 				}
+
+	// 				// Update vote counts and UI display
+	// 				for (const candidateName of Object.keys(votesResults)) {
+	// 					updateVoteCount(candidateName);
+	// 				}
+	// 			}
+	// 		}
+
+	// 	});
+
+
+
+
+
+
+		document.addEventListener("DOMContentLoaded", function () {
+			const storedSelection = localStorage.getItem("candidateSelection");
+			const candidateSelection = storedSelection
+				? JSON.parse(storedSelection)
+				: {};
+
+			const voteButtons = document.querySelectorAll(".vote");
+			const removeButtons = document.querySelectorAll(".remove-vote");
+			const votesResults = {}; // To store the vote counts
+
+			voteButtons.forEach((button) => {
+				button.addEventListener("click", voteHandler);
+			});
+
+			removeButtons.forEach((button) => {
+				button.addEventListener("click", removeVoteHandler);
+			});
+
+			// Load votes results from local storage if available
+			const storedVotesResults = localStorage.getItem("votesResults");
+			if (storedVotesResults) {
+				Object.assign(votesResults, JSON.parse(storedVotesResults));
+				// Update vote counts on the page
+				for (const candidateName in votesResults) {
+					updateVoteCount(candidateName);
+				}
+			}
+
+			// Function to update the vote count on the UI
+			function updateVoteCount(candidateName) {
+				const voteSpan = document.querySelector(
+					`span[data-id="${candidateName}"]`
+				);
+				const currentVotes = votesResults[candidateName] || 0;
+				voteSpan.textContent = currentVotes;
+			}
+function voteHandler(event) {
+				event.preventDefault();
+				const button = event.target;
+				const candidateName = button.getAttribute("data-id").trim();
+				const candidatePosition = button.getAttribute("data-category").trim();
+
+				const previousSelection = candidateSelection[candidatePosition];
+
+				if (!previousSelection) {
+					candidateSelection[candidatePosition] = candidateName;
+					localStorage.setItem(
+						"candidateSelection",
+						JSON.stringify(candidateSelection)
+					);
+
+					votesResults[candidateName] = (votesResults[candidateName] || 0) + 1;
+					updateVoteCount(candidateName);
+
+					// Show remove vote button
+					const removeButton = document.querySelector(
+						`.remove-vote[data-id="${candidateName}"]`
+					);
+					removeButton.style.display = "inline";
+				} else if (previousSelection === candidateName) {
+					alert(
+						`You have already voted for ${candidateName} for the position of ${candidatePosition}.`
+					);
+				} else {
+					alert(
+						`A candidate has already been selected for the position of ${candidatePosition}.`
+					);
+				}
+			}
+
+			function removeVoteHandler(event) {
+				event.preventDefault();
+				const button = event.target;
+				const candidateName = button.getAttribute("data-id").trim();
+				const candidatePosition = button.getAttribute("data-category").trim();
+
+				if (candidateSelection[candidatePosition] === candidateName) {
+					votesResults[candidateName] = (votesResults[candidateName] || 0) - 1;
+					updateVoteCount(candidateName);
+
+					// Remove selection
+					delete candidateSelection[candidatePosition];
+					localStorage.setItem(
+						"candidateSelection",
+						JSON.stringify(candidateSelection)
+					);
+
+					// Hide remove vote button
+					button.style.display = "none";
+
+					// Enable vote button
+					const voteButton = document.querySelector(
+						`.vote[data-id="${candidateName}"][data-category="${candidatePosition}"]`
+					);
+					voteButton.disabled = false;
+				}
+			}
+
+
+			const submitButton = document.getElementById("submit");
+			submitButton.addEventListener("click", submitHandler);
+
+			function submitHandler(event) {
+				event.preventDefault();
+
+				// Check if the user has voted by checking the candidateSelection
+				const selectedPositions = Object.keys(candidateSelection);
+
+				if (selectedPositions.length === 0) {
+					alert("Please vote first before submitting.");
+				} else {
+					alert("Vote submitted!");
+
+					// Reset candidateSelection for new users to vote again
+					localStorage.removeItem("candidateSelection");
+
+					// Store votesResults in local storage
+					localStorage.setItem("votesResults", JSON.stringify(votesResults));
+
+					// Update vote counts and UI display
+					for (const candidateName of Object.keys(votesResults)) {
+						updateVoteCount(candidateName);
+					}
+					window.location.href ="index.html"
+				}
+				
+			}
+		});
