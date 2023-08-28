@@ -136,7 +136,26 @@ const userSignIn = async () => {
 			const user = userCredential.user;
 			console.log(user);
 			alert("Sign in Successful");
-			window.location.href ="Polling.html"
+			const userDetails = {
+				email:loginEmail.value,
+			}
+			localStorage.setItem(
+				"userDetails",
+				JSON.stringify(userDetails)
+			);
+		const userDetailsArray =
+				JSON.parse(localStorage.getItem("userDetailsArray")) || [];
+			const foundUser = userDetailsArray.find(
+				(user) => user.email === loginEmail.value
+			);
+			if (foundUser) {
+				// User's details found, redirect to vot.html
+				window.location.href = "hasVoted.html";
+			} else {
+				// User's details not found, redirect to polling.html
+				window.location.href = "Polling.html";
+			}
+
 		})
 		.catch((error) => {
 			const errorCode = error.code;

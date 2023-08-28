@@ -24,7 +24,7 @@ close_btn.addEventListener("click", function () {
 			const candidateSelection = storedSelection
 				? JSON.parse(storedSelection)
 				: {};
-             
+            const userDetailsArray = [];
 			const userDetails = JSON.parse(localStorage.getItem("userDetails"));
 
 			const voteButtons = document.querySelectorAll(".vote");
@@ -134,9 +134,14 @@ function voteHandler(event) {
 				} else {
 					alert("Vote submitted!");
 
-					// Update user's voting status in userDetails
-					userDetails.hasVoted = true;
-					localStorage.setItem("userDetails", JSON.stringify(userDetails));
+					// Push user's details to the array
+					userDetailsArray.push(userDetails);
+
+					// Store user details array in local storage
+					localStorage.setItem(
+						"userDetailsArray",
+						JSON.stringify(userDetailsArray)
+					);
 
 					// Reset candidateSelection for new users to vote again
 					localStorage.removeItem("candidateSelection");
