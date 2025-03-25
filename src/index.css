@@ -1,0 +1,72 @@
+/* index.css or App.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navLinks ul li:hover{
+    /* color: rgb(233, 85, 31); */
+    background-color: rgb(88, 75, 168);
+    padding: 0px 4px;
+    border-radius: 10px;
+}
+.mainSpan{
+    background: linear-gradient(to right, white, burlywood, white, #172554);
+    background-clip: text;
+    color: transparent;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    content: " ";
+    background: radial-gradient(burlywood, #172554, darkslateblue, white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ 
+    animation:bounce 3s ease-in-out infinite;
+  
+}
+@keyframes bounce{
+    0%{
+        border-radius: 60% 40% 30% 70/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/60% 30% 70% 40%;
+    }
+    100%{
+         border-radius: 60% 40% 30% 70/60% 30% 70% 40%;
+    }
+}
+
+.blob{
+    z-index: 2;
+    filter: drop-shadow(10px 30px 50px rgba(10, 20, 8, 0.9));
+    animation: spin 10s ease-in-out infinite;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+@keyframes spin {
+    0%{
+        transform: rotate(20deg);
+    }
+    205%{
+        transform: rotate(40deg);
+    }
+    50%{
+        transform: rotate(50deg);
+    }
+    75%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
