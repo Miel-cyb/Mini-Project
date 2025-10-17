@@ -4,21 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.html{
-    scroll-behavior: smooth;
-}
-body{
-    background-color: #172554
-}
-.list:hover{
-    color: rgba(248, 245, 243, 0.616);
-    border-bottom: 1px solid darkgoldenrod;
+.navLinks ul li:hover{
+    /* color: rgb(233, 85, 31); */
+    background-color: rgb(88, 75, 168);
+    padding: 0px 4px;
     border-radius: 10px;
-}
-.list:last-child:hover{
-    background-color: #0c1430;
-    border-bottom: none;
-   
 }
 .mainSpan{
     background: linear-gradient(to right, white, burlywood, white, #172554);
@@ -79,10 +69,3 @@ body{
 }
 
 
-.radial{
-    background: radial-gradient( white,#172554,darkslateblue,#172554);
-}
-
-.perspective{
-    perspective: 1000px;
-}
