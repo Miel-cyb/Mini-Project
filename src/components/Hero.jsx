@@ -1,9 +1,8 @@
 import React from 'react'
 import Navbar from './Navbar'
-import MainText from './mainText'
-import Mockup from './mockup'
-
-const Header = () => {
+import MainText from './MainText'
+import Mockup from './Mockup'
+const Hero = () => {
   return (
     <div className='bg-deepBlue bg-no-repeat bg-center bg-cover h-screen w-full overflow-hidden relative'>
         <Navbar/>
@@ -20,5 +19,4 @@ const Header = () => {
     </div>
   )
 }
-
-export default Header
+export default Hero

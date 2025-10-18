@@ -1,66 +1,60 @@
-import React from "react"
+import { CheckCircleIcon, LockClosedIcon, EyeIcon } from '@heroicons/react/24/outline';
+
+const features = [
+  {
+    name: 'Transparent Voting',
+    description: 'Our blockchain-based system ensures that every vote is recorded and publicly verifiable, eliminating any chance of tampering.',
+    icon: EyeIcon,
+  },
+  {
+    name: 'Enhanced Security',
+    description: 'With advanced cryptographic techniques, our platform provides a secure environment for casting and counting votes.',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'User-Friendly Interface',
+    description: 'A simple and intuitive design makes it easy for anyone to vote, regardless of their technical expertise.',
+    icon: CheckCircleIcon,
+  },
+];
+
 const FeaturesSection = () => {
-    const features = [
-      {
-        icon: "fa-shield-alt",
-        title: "Secure Voting",
-        description: "End-to-end encryption ensures your vote remains confidential and tamper-proof.",
-      },
-      {
-        icon: "fa-mobile-alt",
-        title: "Vote Anywhere",
-        description: "Cast your vote from any device, anywhere on campus with our mobile-friendly platform.",
-      },
-      {
-        icon: "fa-chart-line",
-        title: "Real-time Results",
-        description: "Watch election results unfold in real-time with our transparent counting system.",
-      },
-      {
-        icon: "fa-user-check",
-        title: "Verified Identity",
-        description: "Secure authentication ensures only eligible students can participate in elections.",
-      },
-      {
-        icon: "fa-history",
-        title: "Voting History",
-        description: "Access your personal voting history and track your participation in campus democracy.",
-      },
-      {
-        icon: "fa-universal-access",
-        title: "Accessibility",
-        description: "Designed for all students, including those with disabilities, ensuring everyone can vote.",
-      },
-    ]
-  
-    return (
-      <section id="features" className="py-16 px-6 md:px-12 lg:px-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Discover what makes Electra Vote the preferred platform for campus elections.
-            </p>
-          </div>
-  
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="bg-deepBlue w-14 h-14 rounded-full flex items-center justify-center text-white text-xl mb-4">
-                  <i className={`fa-solid ${feature.icon}`}></i>
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:text-center">
+          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            A better way to vote
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            Our platform is designed to make voting simple, secure, and transparent. Here's how we do it.
+          </p>
+        </div>
+
+        <div className="mt-20 flex items-center justify-center">
+          <div className="w-full lg:w-1/2">
+            <dl className="space-y-10">
+              {features.map((feature) => (
+                <div key={feature.name} className="relative">
+                  <dt>
+                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                      <feature.icon className="h-6 w-6" aria-hidden="true" />
+                    </div>
+                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                  </dt>
+                  <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
+              ))}
+            </dl>
+          </div>
+          <div className="hidden lg:block lg:w-1/2 ml-10">
+            <img src="https://cdn.dribbble.com/users/1293592/screenshots/4850388/media/b134b34179c394589d936168d067423e.gif" alt="Feature Animation" className="rounded-lg shadow-lg" />
           </div>
         </div>
-      </section>
-    )
-  }
-  
-  export default FeaturesSection
-  
+      </div>
+    </section>
+  );
+};
+
+export default FeaturesSection;

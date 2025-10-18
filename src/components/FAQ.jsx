@@ -27,7 +27,7 @@ const FAQSection = () => {
     {
       question: "How can I verify that my vote was counted?",
       answer:
-        "After voting, you'll receive a unique receipt code. You can use this code to verify that your vote was included in the final tally without revealing who you voted for.",
+        "After voting, you see an update of the vote. You can  verify that your vote was included in the final tally.",
     },
     {
       question: "What devices can I use to access Electra Vote?",

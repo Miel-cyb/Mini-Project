@@ -1,44 +1,34 @@
-import React from 'react'
-import ContactSection from './Contact';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-    const today = new Date().getFullYear();
   return (
-    <>
-       <hr className="border-gray-600" />
-    <footer id="footer" className="bg-deepBlue text-white py-8">
-     
-        <div className="max-w-7xl mx-auto px-4 ">
-            <div className="flex flex-col sm:flex-row sm:justify-between">
-                <div>
-                    <p className="text-lg font-semibold">Campus Voting Platform</p>
-                    <p className="mt-2 text-sm text-gray-300">Empowering your voice in campus elections.</p>
-                </div>
-                <div className="mt-4 sm:mt-0">
-                    <ul className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-8">
-                        <li>
-                            <a href="#" className="text-sm hover:text-gray-400">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" className="text-sm hover:text-gray-400">Terms of Service</a>
-                        </li>
-                        <li>
-                            <div>
-                                <a href="#" className="text-sm hover:text-gray-400">Contact Us: </a>
-                                <p className="text-xs text-gray-400 mt-1">📧 support@campusvote.com</p>
-                                <p className="text-xs text-gray-400">📞 +233 50 123 4567</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="mt-6 text-sm text-gray-400">
-                <p>&copy; {today} Campus Voting Platform. <br /> All rights reserved.</p>
-            </div>
+    <footer className="bg-deepBlue text-white py-12" id="contact">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-wrap justify-between">
+          <div className="w-full md:w-1/3 mb-8 md:mb-0">
+            <h3 className="text-xl font-bold mb-4">ElectraVote</h3>
+            <p className="text-gray-400">Secure and transparent online voting for modern organizations.</p>
+          </div>
+          <div className="w-full md:w-1/3 mb-8 md:mb-0">
+            <h3 className_="text-xl font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><Link to="/#features" className="text-gray-400 hover:text-white">Features</Link></li>
+              <li><Link to="/#how-it-works" className="text-gray-400 hover:text-white">How It Works</Link></li>
+              <li><Link to="/#testimonials" className="text-gray-400 hover:text-white">Testimonials</Link></li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/3" id="footer">
+            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+            <p className="text-gray-400">123 Main Street, Richytown, Ghana</p>
+            <p className="text-gray-400">info@electravote.com</p>
+          </div>
         </div>
+        <div className="mt-8 border-t border-blue-800 pt-6 text-center">
+          <p className="text-gray-400">&copy; {new Date().getFullYear()} ElectraVote. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-    </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

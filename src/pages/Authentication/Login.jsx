@@ -8,9 +8,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../../firebaseConfig"; 
 import { useNavigate } from "react-router-dom";
 
-
-
-
 const schema = yup.object().shape({
   email: yup.string().email('Invalid email format').required('Email is required') .matches(
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -41,7 +38,6 @@ const onSubmit = async (data) => {
     alert("Invalid email or password. Please try again.");
   }
 };
-
 
   return (
     <div className='bg-deepBlue w-full min-h-screen'>

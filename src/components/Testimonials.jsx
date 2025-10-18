@@ -8,7 +8,7 @@ const TestimonialsSection = () => {
       id: 1,
       name: "Sarah Johnson",
       role: "Student Council President",
-      image: "/placeholder.svg",
+      image: "https://randomuser.me/api/portraits/women/21.jpg",
       quote:
         "Electra Vote transformed our student elections. The platform is intuitive, secure, and made counting votes a breeze. Voter turnout increased by 45% compared to previous years!",
     },
@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
       id: 4,
       name: "Dr. Robert Williams",
       role: "Faculty Advisor",
-      image: "/placeholder.svg",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
       quote:
         "The transparency and integrity of Electra Vote have eliminated disputes about election results. It's become an essential tool for fostering democratic values on our campus.",
     },

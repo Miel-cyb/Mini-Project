@@ -1,26 +1,21 @@
-import React from 'react'
-import Header from '../components/Header'
-import HeroSection from '../components/HeroSection'
-import Overview from '../components/Overview'
+import Header from '../components/Hero'
 import FeaturesSection from '../components/FeatureSection'
-import SecureVotingSection from '../components/SecureVoting'
+import HowItWorks from '../components/HowItWorks'
+import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
-import AboutSection from '../components/About'
-import ContactSection from '../components/Contact'
-import CTASection from '../components/CTASection'
-import TestimonialsSection from '../components/Testimonials'
-import StatsSection from '../components/StatsSection'
-import FAQSection from '../components/FAQ'
+import FAQ from '../components/FAQ'
+
 
 const Home = () => {
   return (
-   
     <>
-        <Header/>
-        <HeroSection/>
-        
-    </>
-  )
-}
+      <Header />
+      <FeaturesSection />
+      <HowItWorks />
+      
+      <Testimonials />
+      <FAQ/>
+      <Footer />
+    </>)}
 
 export default Home
