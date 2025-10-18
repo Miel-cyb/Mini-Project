@@ -8,6 +8,17 @@ html {
   scroll-behavior: smooth;
 }
 
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .navLinks ul li:hover{
     /* color: rgb(233, 85, 31); */
     background-color: rgb(88, 75, 168);
@@ -71,5 +82,3 @@ html {
         transform: rotate(360deg);
     }
 }
-
-

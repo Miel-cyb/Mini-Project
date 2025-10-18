@@ -1,55 +1,48 @@
-import { CheckCircleIcon, LockClosedIcon, EyeIcon } from '@heroicons/react/24/outline';
-
-const features = [
-  {
-    name: 'Transparent Voting',
-    description: 'Our blockchain-based system ensures that every vote is recorded and publicly verifiable, eliminating any chance of tampering.',
-    icon: EyeIcon,
-  },
-  {
-    name: 'Enhanced Security',
-    description: 'With advanced cryptographic techniques, our platform provides a secure environment for casting and counting votes.',
-    icon: LockClosedIcon,
-  },
-  {
-    name: 'User-Friendly Interface',
-    description: 'A simple and intuitive design makes it easy for anyone to vote, regardless of their technical expertise.',
-    icon: CheckCircleIcon,
-  },
-];
+import React from 'react';
 
 const FeaturesSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            A better way to vote
-          </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Our platform is designed to make voting simple, secure, and transparent. Here's how we do it.
-          </p>
-        </div>
-
-        <div className="mt-20 flex items-center justify-center">
-          <div className="w-full lg:w-1/2">
-            <dl className="space-y-10">
-              {features.map((feature) => (
-                <div key={feature.name} className="relative">
-                  <dt>
-                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                      <feature.icon className="h-6 w-6" aria-hidden="true" />
-                    </div>
-                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
-                  </dt>
-                  <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
+    <section className="py-20 bg-gray-100">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+        <div className="flex flex-wrap items-center justify-center gap-20">
+          <div className="w-full md:w-1/2 pr-8">
+            <ul className="space-y-6">
+              <li className="flex items-start">
+                <div className="bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                  <i className="fas fa-lock"></i>
                 </div>
-              ))}
-            </dl>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Secure Voting</h3>
+                  <p className="text-gray-600">Utilizes blockchain technology for tamper-proof and transparent voting records.</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                  <i className="fas fa-id-card"></i>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Voter Anonymity</h3>
+                  <p className="text-gray-600">Ensures voter privacy with advanced cryptographic techniques.</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-blue-500 text-white rounded-full h-8 w-8 flex items-center justify-center mr-4">
+                  <i className="fas fa-chart-pie"></i>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Real-time Results</h3>
+                  <p className="text-gray-600">Monitor election results in real-time with a transparent and auditable dashboard.</p>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div className="hidden lg:block lg:w-1/2 ml-10">
-            <img src="https://cdn.dribbble.com/users/1293592/screenshots/4850388/media/b134b34179c394589d936168d067423e.gif" alt="Feature Animation" className="rounded-lg shadow-lg" />
+          <div >
+            <div className="relative">
+              <div className="rounded-lg w-72">
+                <img src="/voting-rights-election.gif" alt="Feature Animation" className="rounded-lg shadow-lg w-full h-auto object-fill" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
