@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 const Countdown = ({ deadline, onComplete }) => {
@@ -8,7 +7,6 @@ const Countdown = ({ deadline, onComplete }) => {
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
@@ -32,23 +30,17 @@ const Countdown = ({ deadline, onComplete }) => {
     return () => clearTimeout(timer);
   });
 
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval] && timeLeft[interval] !== 0) {
-      return;
-    }
-
-    timerComponents.push(
-      <span key={interval}>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
-    );
-  });
-
   return (
-    <div>
-      {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+    <div className="text-lg font-mono bg-gray-200 px-4 py-2 rounded-lg shadow-inner">
+      {timeLeft.hours !== undefined ? (
+        <>
+          <span>{String(timeLeft.hours).padStart(2, '0')}</span>:
+          <span>{String(timeLeft.minutes).padStart(2, '0')}</span>:
+          <span>{String(timeLeft.seconds).padStart(2, '0')}</span>
+        </>
+      ) : (
+        <span>Time's up!</span>
+      )}
     </div>
   );
 };

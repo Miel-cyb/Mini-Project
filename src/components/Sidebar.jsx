@@ -1,8 +1,7 @@
-
 import { Link } from "react-router-dom";
 import { Home, User, Settings, LogOut, CheckSquare, BarChart2 } from "react-feather";
 
-const Sidebar = ({ user, activeTab, setActiveTab, handleLogout }) => {
+const Sidebar = ({ user, activeTab, setActiveTab, handleLogout, isSidebarOpen, setIsSidebarOpen }) => {
   const menuItems = [
     { name: "Overview", icon: <Home className="w-5 h-5" />, id: "overview" },
     { name: "My Profile", icon: <User className="w-5 h-5" />, id: "profile" },
@@ -12,13 +11,16 @@ const Sidebar = ({ user, activeTab, setActiveTab, handleLogout }) => {
   ];
 
   return (
-    <div className="w-64 bg-deepBlue text-white shadow-lg hidden md:block">
-      <div className="p-6">
+    <div className={`fixed inset-y-0 left-0 w-64 bg-deepBlue text-white shadow-lg transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:relative md:translate-x-0`}>
+      <div className="p-6 flex justify-between items-center">
         <Link to="/" className="font-pacifico text-xl flex items-center gap-2">
           <span>
             Electra <span className="text-yellow-500">Vote</span>
           </span>
         </Link>
+        <button onClick={() => setIsSidebarOpen(false)} className="text-white md:hidden">
+          <LogOut className="w-6 h-6" />
+        </button>
       </div>
 
       <div className="px-4 py-6">
@@ -38,7 +40,10 @@ const Sidebar = ({ user, activeTab, setActiveTab, handleLogout }) => {
           {menuItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => setActiveTab(item.id)}
+              onClick={() => {
+                setActiveTab(item.id);
+                setIsSidebarOpen(false); // Close sidebar on tab selection
+              }}
               className={`flex items-center w-full px-4 py-3 text-left rounded-lg transition-colors ${
                 activeTab === item.id
                   ? "bg-yellow-500 text-deepBlue"

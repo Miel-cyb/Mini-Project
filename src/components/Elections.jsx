@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Countdown from "./Countdown";
 import VoteCount from "./VoteCount";
@@ -8,8 +7,8 @@ const Elections = ({ upcomingElections, votedElections, handleVote, voteCounts, 
 
   return (
     <div className="bg-white rounded-xl shadow-md p-8">
-      <div className="flex justify-between items-center mb-6">
-        <div className="w-3/4">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+        <div className="w-full md:w-3/4 mb-4 md:mb-0">
           <h1 className="text-2xl font-bold text-gray-900">Upcoming Elections</h1>
           <p className="text-gray-600 mt-2">
             Welcome to the election page. Here you can cast your vote for the candidates in the upcoming elections. Make your voice heard!
