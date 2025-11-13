@@ -1,8 +1,3 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A responsive voting platform was developed to simulate real-world election workflows while incorporating accessibility standards for diverse user groups. Usability testing with over 30 participants was conducted to assess task completion rates, navigation ease, and visual comprehension across devices. Participants’ feedback guided iterative design changes focused on layout clarity, input validation, and transparency features to strengthen user trust.
